@@ -39,3 +39,25 @@ Projeto com django utilizando ambiente isolados de dados usando schemas do postg
 ![](https://i.imgur.com/JHoDoOa.png)
 ![](https://i.imgur.com/tgrNtKP.png)
 ![](https://i.imgur.com/wOE8WqI.png)
+
+
+*O banco de dados fica com 1 schema para **cada ambiente de usuário***
+
+![](https://i.imgur.com/msMg0zl.png)
+
+-----
+
+### Upgrade para django rest framework usando isolamento de ambientes de clientes com dados exclusivos e compartilhados.
+
+-------
+*Resposta da api para http://cliente.todo.local:8000/api/beforeidie/ e http://cliente2.todo.local:8000/api/beforeidie/ com dados compartilhados*
+![](https://i.imgur.com/HW7K8lk.png)
+
+-------
+*Resposta da api para http://cliente.todo.local:8000/api/mylist/ com dados exclusivo do cliente 1*
+![](https://i.imgur.com/Q9W6CAC.png)
+
+
+-------
+*Resposta da api para http://cliente2.todo.local:8000/api/mylist/ com dados exclusivo do cliente 2*
+![](https://i.imgur.com/uZNK1MJ.png)
