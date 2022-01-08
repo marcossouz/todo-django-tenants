@@ -21,8 +21,8 @@ DATABASE_ROUTERS = (
 
 SHARED_APPS = (
     'django_tenants',  # mandatory
+    'rest_framework',
     'customers',  # you must list the app where your tenant model resides in
-
     'before_i_die',
 
     'django.contrib.contenttypes',
@@ -47,6 +47,11 @@ INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in S
 
 TENANT_MODEL = "customers.Client"  # app.Model
 TENANT_DOMAIN_MODEL = "customers.Domain"  # app.Model
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django_tenants.middleware.main.TenantMainMiddleware',
