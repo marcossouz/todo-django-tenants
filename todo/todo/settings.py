@@ -23,6 +23,8 @@ SHARED_APPS = (
     'django_tenants',  # mandatory
     'customers',  # you must list the app where your tenant model resides in
 
+    'before_i_die',
+
     'django.contrib.contenttypes',
 
     # everything below here is optional
@@ -38,8 +40,7 @@ TENANT_APPS = (
     'django.contrib.contenttypes',
 
     # # your tenant-specific apps
-    # 'myapp.hotels',
-    # 'myapp.houses',
+    'my_list',
 )
 
 INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
